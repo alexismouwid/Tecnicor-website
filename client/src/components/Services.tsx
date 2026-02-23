@@ -64,7 +64,7 @@ const services = [
       'Diseño optimizado para conversión',
     ],
     icon: <ShoppingCart className="w-7 h-7" />,
-    image: 'https://images.unsplash.com/photo-1460925895917-adf4e565db18?w=800&h=500&fit=crop',
+    image: '/tienda.jpg',
     imageLeft: true,
   },
   {
@@ -78,7 +78,7 @@ const services = [
       'Editable y escalable',
     ],
     icon: <GitBranch className="w-7 h-7" />,
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop',
+    image: '/diagrama.jpg',
     imageLeft: false,
   },
   {
