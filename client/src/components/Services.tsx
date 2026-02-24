@@ -1,14 +1,94 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MessageCircle, Check } from 'lucide-react';
+// Importaciones de iconos de lucide-react originales
 import {
   Brain, Palette, BookOpen, ShoppingCart, GitBranch,
   Megaphone, FileText, Zap, Shield, Code,
+  Video, Cpu, BarChart3
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Iconos estilo Art-Line
+const BriefcaseArtLine = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+    <line x1="2" y1="7" x2="22" y2="7"></line>
+  </svg>
+);
+
+const GraduationCapArtLine = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+  </svg>
+);
+
+const MonitorArtLine = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+    <line x1="8" y1="21" x2="16" y2="21"></line>
+    <line x1="12" y1="17" x2="12" y2="21"></line>
+  </svg>
+);
+
+const SparklesArtLine = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+    <path d="M5 3v4"></path>
+    <path d="M19 17v4"></path>
+    <path d="M3 5h4"></path>
+    <path d="M17 19h4"></path>
+  </svg>
+);
 
 const services = [
   {
@@ -24,6 +104,7 @@ const services = [
     icon: <Brain className="w-7 h-7" />,
     image: '/mapamental.jpg',
     imageLeft: false,
+    category: 'Académico',
   },
   {
     id: 'diseno-grafico',
@@ -38,6 +119,7 @@ const services = [
     icon: <Palette className="w-7 h-7" />,
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop',
     imageLeft: true,
+    category: 'Profesional',
   },
   {
     id: 'informes-universitarios',
@@ -50,8 +132,9 @@ const services = [
       'Entrega puntual y revisiones incluidas',
     ],
     icon: <BookOpen className="w-7 h-7" />,
-    image: 'https://images.unsplash.com/photo-1507842072343-583f20270319?w=800&h=500&fit=crop',
+    image: '/informe.jpg',
     imageLeft: false,
+    category: 'Académico',
   },
   {
     id: 'tiendas-online',
@@ -66,6 +149,7 @@ const services = [
     icon: <ShoppingCart className="w-7 h-7" />,
     image: '/tienda.jpg',
     imageLeft: true,
+    category: 'Profesional',
   },
   {
     id: 'diagramas-flujo',
@@ -80,6 +164,7 @@ const services = [
     icon: <GitBranch className="w-7 h-7" />,
     image: '/diagrama.jpg',
     imageLeft: false,
+    category: 'Académico',
   },
   {
     id: 'marketing-digital',
@@ -94,6 +179,7 @@ const services = [
     icon: <Megaphone className="w-7 h-7" />,
     image: '/marketing.png',
     imageLeft: true,
+    category: 'Profesional',
   },
   {
     id: 'powerpoint-canva',
@@ -108,6 +194,7 @@ const services = [
     icon: <FileText className="w-7 h-7" />,
     image: '/powerpoint.png',
     imageLeft: false,
+    category: 'Académico',
   },
   {
     id: 'mantenimiento',
@@ -122,6 +209,7 @@ const services = [
     icon: <Shield className="w-7 h-7" />,
     image: '/mantenimiento.png',
     imageLeft: true,
+    category: 'Digital',
   },
   {
     id: 'paginas-web',
@@ -136,9 +224,10 @@ const services = [
     icon: <Code className="w-7 h-7" />,
     image: '/paginasweb.png',
     imageLeft: false,
+    category: 'Digital',
   },
   {
-    id: 'desarrollo-ia',
+    id: 'desarrollo-ia-original',
     title: 'Desarrollo con IA',
     description:
       'Soluciones inteligentes y automatizadas con las últimas tecnologías de inteligencia artificial. Integramos IA en tus procesos para aumentar la productividad, reducir costos y ofrecer experiencias personalizadas.',
@@ -150,6 +239,71 @@ const services = [
     icon: <Zap className="w-7 h-7" />,
     image: '/ia.png',
     imageLeft: true,
+    category: 'Desarrollo con IA',
+  },
+  {
+    id: 'contenido-audiovisual-ia',
+    title: 'Generación y Edición de Contenido Audiovisual Hiperrealista',
+    description:
+      'Creación, edición y mejora de contenido multimedia (imágenes, video, audio) utilizando IA generativa para producir material de alta calidad de forma rápida y económica.',
+    features: [
+      'Clonación de voz con sincronización labial',
+      'Edición de video por comandos de texto',
+      'Upscaling y restauración de archivos antiguos',
+    ],
+    icon: <Video className="w-7 h-7" />,
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=500&fit=crop',
+    imageLeft: false,
+    category: 'Desarrollo con IA',
+  },
+  {
+    id: 'automatizacion-procesos-ia',
+    title: 'Automatización de Procesos con IA (Hyperautomation)',
+    description:
+      'Creación de "agentes" o "robots" que realizan tareas repetitivas de back-office empresarial: procesamiento de facturas, organización de datos y redacción de informes.',
+    features: [
+      'Extracción y clasificación inteligente de datos',
+      'Agente de gestión de correo electrónico',
+      'Generación automática de reportes',
+    ],
+    icon: <Cpu className="w-7 h-7" />,
+    image: 'https://images.unsplash.com/photo-1518433278981-162f13bc7335?w=800&h=500&fit=crop',
+    imageLeft: true,
+    category: 'Desarrollo con IA',
+  },
+  {
+    id: 'analisis-predictivo-ia',
+    title: 'Análisis Predictivo y Simulación de Negocios',
+    description:
+      'Consultoría de alto valor que utiliza Machine Learning para analizar datos históricos, predecir tendencias futuras y simular escenarios estratégicos.',
+    features: [
+      'Predicción de abandono de clientes',
+      'Optimización de precios dinámicos',
+      'Gemelo digital de cadena de suministro',
+    ],
+    icon: <BarChart3 className="w-7 h-7" />,
+    image: 'https://images.unsplash.com/photo-1551288049-bbbda546697a?w=800&h=500&fit=crop',
+    imageLeft: false,
+    category: 'Desarrollo con IA',
+  },
+];
+
+const categories = [
+  {
+    name: 'Profesional',
+    icon: <BriefcaseArtLine className="w-10 h-10" />,
+  },
+  {
+    name: 'Académico',
+    icon: <GraduationCapArtLine className="w-10 h-10" />,
+  },
+  {
+    name: 'Digital',
+    icon: <MonitorArtLine className="w-10 h-10" />,
+  },
+  {
+    name: 'Desarrollo con IA',
+    icon: <SparklesArtLine className="w-10 h-10" />,
   },
 ];
 
@@ -185,7 +339,7 @@ function ServiceSection({ service }) {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-background min-h-screen flex items-center py-16 overflow-hidden"
+      className="relative bg-background flex items-center py-16 overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
@@ -256,6 +410,7 @@ function ServiceSection({ service }) {
 
 export default function Services() {
   const headerRef = useRef(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useGSAP(() => {
     gsap.fromTo(
@@ -274,6 +429,10 @@ export default function Services() {
     );
   }, []);
 
+  const filteredServices = selectedCategory
+    ? services.filter((service) => service.category === selectedCategory)
+    : [];
+
   return (
     <div className="bg-background">
       {/* Header — animado con GSAP, NO sticky */}
@@ -289,10 +448,32 @@ export default function Services() {
         </p>
       </div>
 
-      {/* One full-screen section per service */}
-      {services.map((service) => (
-        <ServiceSection key={service.id} service={service} />
-      ))}
+      {/* Category Selection */}
+      <div className="flex flex-wrap justify-center gap-4 lg:gap-8 py-8 px-4">
+        {categories.map((category) => (
+          <button
+            key={category.name}
+            onClick={() => setSelectedCategory(category.name)}
+            className={`flex flex-col items-center p-4 rounded-lg transition-all duration-200 min-w-[120px]
+              ${selectedCategory === category.name
+                ? 'bg-accent text-primary-foreground shadow-lg'
+                : 'bg-card text-muted-foreground hover:bg-card-hover'}
+            `}
+          >
+            <div className="mb-2">
+              {category.icon}
+            </div>
+            <span className="text-xs lg:text-sm font-medium text-center">{category.name}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Filtered Services */}
+      <div className="services-container">
+        {filteredServices.map((service) => (
+          <ServiceSection key={service.id} service={service} />
+        ))}
+      </div>
     </div>
   );
 }
