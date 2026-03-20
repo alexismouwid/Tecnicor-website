@@ -91,112 +91,92 @@ const SparklesArtLine = ({ className }) => (
 );
 
 const services = [
-  {
-    id: 'mapas-mentales',
-    title: 'Mapas Mentales',
-    description:
-      'Organiza tus ideas de forma visual y estructurada. Perfecto para brainstorming, planificación de proyectos y estudios académicos. Nuestro equipo crea mapas mentales profesionales que facilitan la comprensión y memorización de conceptos complejos.',
-    features: [
-      'Diseño visual profesional y atractivo',
-      'Estructura jerárquica clara y organizada',
-      'Fácil de entender y memorizar',
-    ],
-    icon: <Brain className="w-7 h-7" />,
-    image: '/mapamental.jpg',
-    imageLeft: false,
-    category: 'Académico',
-  },
-  {
-    id: 'diseno-grafico',
-    title: 'Diseño Gráfico',
-    description:
-      'Creaciones visuales profesionales y personalizadas para tu marca. Desde logos hasta banners, flyers y material de marketing. Nos especializamos en diseños modernos que captan la atención y comunican tu mensaje de forma efectiva.',
-    features: [
-      'Diseños únicos y personalizados',
-      'Múltiples formatos y resoluciones',
-      'Branding profesional y consistente',
-    ],
-    icon: <Palette className="w-7 h-7" />,
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop',
-    imageLeft: true,
-    category: 'Profesional',
-  },
-  {
-    id: 'informes-universitarios',
-    title: 'Informes Universitarios',
-    description:
-      'Trabajos académicos de calidad superior con normas APA, IEEE y más. Redactamos, estructuramos y formateamos informes, tesis y proyectos con rigor académico y presentación impecable.',
-    features: [
-      'Normas APA, IEEE y estilos académicos',
-      'Redacción clara y estructurada',
-      'Entrega puntual y revisiones incluidas',
-    ],
-    icon: <BookOpen className="w-7 h-7" />,
-    image: '/informe.jpg',
-    imageLeft: false,
-    category: 'Académico',
-  },
-  {
-    id: 'tiendas-online',
-    title: 'Tiendas Online',
-    description:
-      'Plataformas de comercio electrónico funcionales y atractivas. Desarrollamos tiendas con carrito de compras, pasarela de pagos y gestión de inventario. Tu negocio disponible las 24 horas del día.',
-    features: [
-      'Integración con pasarelas de pago',
-      'Panel de administración intuitivo',
-      'Diseño optimizado para conversión',
-    ],
-    icon: <ShoppingCart className="w-7 h-7" />,
-    image: '/tienda.jpg',
-    imageLeft: true,
-    category: 'Profesional',
-  },
-  {
-    id: 'diagramas-flujo',
-    title: 'Diagramas de Flujo',
-    description:
-      'Visualización clara de procesos y sistemas complejos. Creamos diagramas de flujo profesionales que facilitan la comprensión de procedimientos, algoritmos y flujos de trabajo en tu organización.',
-    features: [
-      'Símbolos estándar y profesionales',
-      'Fácil de seguir y entender',
-      'Editable y escalable',
-    ],
-    icon: <GitBranch className="w-7 h-7" />,
-    image: '/diagrama.jpg',
-    imageLeft: false,
-    category: 'Académico',
-  },
-  {
-    id: 'marketing-digital',
-    title: 'Marketing Digital',
-    description:
-      'Estrategias para potenciar tu presencia online y aumentar tus ventas. Desde redes sociales hasta campañas publicitarias y SEO. Te ayudamos a conectar con tu audiencia de forma efectiva.',
-    features: [
-      'Gestión de redes sociales',
-      'Campañas publicitarias optimizadas',
-      'Análisis y reportes de resultados',
-    ],
-    icon: <Megaphone className="w-7 h-7" />,
-    image: '/marketing.png',
-    imageLeft: true,
-    category: 'Profesional',
-  },
-  {
-    id: 'powerpoint-canva',
-    title: 'PowerPoint / Canva',
-    description:
-      'Presentaciones impactantes y profesionales que capturan la atención de tu audiencia. Diseñamos diapositivas creativas con infografías, animaciones y narrativa visual que comunica con claridad.',
-    features: [
-      'Diseño personalizado y creativo',
-      'Infografías y gráficos incluidos',
-      'Formato editable entregado',
-    ],
-    icon: <FileText className="w-7 h-7" />,
-    image: '/powerpoint.png',
-    imageLeft: false,
-    category: 'Académico',
-  },
-  {
+ {
+  id: 'trabajos-academicos',
+  title: 'Trabajos Académicos',
+  description:
+    'Entregar un trabajo mal presentado puede costarte una nota, una beca o una oportunidad. Nos encargamos de redactar, estructurar y diseñar tus informes, tesis y proyectos con el nivel que exigen tus profesores. Tú nos das la idea, nosotros te entregamos el resultado listo para presentar.',
+  features: [
+    'Entrega puntual para que nunca pierdas una fecha límite',
+    'Presentación impecable que proyecta seriedad y esfuerzo',
+    'Revisiones incluidas hasta que quedes 100% satisfecho',
+  ],
+  icon: <BookOpen className="w-7 h-7" />,
+  image: '/informe.jpg',
+  imageLeft: false,
+  category: 'Académico',
+},
+{
+  id: 'presentaciones-visuales',
+  title: 'Presentaciones y Material Visual',
+  description:
+    'Una buena idea mal presentada no convence a nadie. Creamos presentaciones en PowerPoint y Canva, mapas mentales y diagramas que comunican con claridad, impactan visualmente y hacen que tu audiencia entienda el mensaje desde el primer slide. Ideal para sustentar proyectos, exponer ante jurados o presentar a clientes.',
+  features: [
+    'Diseño profesional que ahorra horas de trabajo frente al computador',
+    'Material listo para usar, editable y tuyo para siempre',
+    'Claridad visual que aumenta tus posibilidades de aprobar o convencer',
+  ],
+  icon: <FileText className="w-7 h-7" />,
+  image: '/powerpoint.png',
+  imageLeft: true,
+  category: 'Académico',
+},  {
+  id: 'chatbots-automatizados',
+  title: 'Chat-Bots Automatizados',
+  description:
+    'Imagina tener un empleado que atiende a tus clientes los 7 días de la semana, a cualquier hora, sin errores y sin descanso. Nuestros chat-bots responden preguntas, agendan citas, envían presupuestos y cierran ventas mientras tú te enfocas en lo que realmente importa.',
+  features: [
+    'Atiende clientes 24/7 sin pagar horas extra',
+    'Reduce hasta un 80% el tiempo en tareas repetitivas',
+    'Respuestas consistentes y de calidad en cada interacción',
+  ],
+  icon: <MessageCircle className="w-7 h-7" />,
+  image: 'https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?w=800&h=500&fit=crop',
+  imageLeft: true,
+  category: 'Profesional',
+},   {
+  id: 'voicebots-automatizados',
+  title: 'Voice-Bots Automatizados',
+  description:
+    'Tu negocio nunca más pierde una llamada. Nuestros asistentes de voz atienden, filtran y resuelven consultas telefónicas automáticamente, con una voz natural y profesional. Sin filas de espera, sin llamadas perdidas, sin contratar más personal.',
+  features: [
+    'Atiende llamadas ilimitadas al mismo tiempo, sin esperas',
+    'Agenda citas y cobra información sin intervención humana',
+    'Disponible 24/7, reduciendo costos operativos desde el primer día',
+  ],
+  icon: <MessageCircle className="w-7 h-7" />,
+  image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&h=500&fit=crop',
+  imageLeft: false,
+  category: 'Profesional',
+},   {
+  id: 'automatizacion-tareas',
+  title: 'Automatización de Tareas',
+  description:
+    'Cada tarea repetitiva que tu equipo hace a mano es tiempo y dinero que se pierde todos los días. Automatizamos esos procesos para que tu negocio funcione solo: envío de correos, generación de reportes, actualización de datos, notificaciones y mucho más. El resultado es un equipo más enfocado, menos errores y más ganancias.',
+  features: [
+    'Elimina tareas manuales y libera horas de trabajo al día',
+    'Procesos que corren solos, sin supervisión humana',
+    'Menos errores, más velocidad y mayor rentabilidad',
+  ],
+  icon: <Zap className="w-7 h-7" />,
+  image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop',
+  imageLeft: true,
+  category: 'Profesional',
+},    {
+  id: 'paginas-web',
+  title: 'Páginas Web',
+  description:
+    'Tu página web es tu vendedor número uno, disponible las 24 horas. Si no tienes presencia en internet, los clientes simplemente eligen a tu competencia. Creamos sitios modernos, rápidos y atractivos que generan confianza desde el primer clic y convierten visitantes en clientes reales.',
+  features: [
+    'Tu negocio visible y vendiendo las 24 horas del día',
+    'Diseño que transmite confianza y profesionalismo al instante',
+    'Aparece antes que tu competencia en Google',
+  ],
+  icon: <Code className="w-7 h-7" />,
+  image: '/paginasweb.png',
+  imageLeft: false,
+  category: 'Digital',
+},   {
     id: 'mantenimiento',
     title: 'Mantenimiento',
     description:
@@ -211,22 +191,7 @@ const services = [
     imageLeft: true,
     category: 'Digital',
   },
-  {
-    id: 'paginas-web',
-    title: 'Páginas Web',
-    description:
-      'Sitios web modernos, rápidos y optimizados para buscadores. Desarrollamos desde landing pages hasta portales completos, responsive y con diseño atractivo que refleja la identidad de tu marca.',
-    features: [
-      'Diseño responsive y moderno',
-      'Optimización SEO incluida',
-      'Carga rápida y segura (HTTPS)',
-    ],
-    icon: <Code className="w-7 h-7" />,
-    image: '/paginasweb.png',
-    imageLeft: false,
-    category: 'Digital',
-  },
-  {
+{
     id: 'desarrollo-ia-original',
     title: 'Desarrollo con IA',
     description:
@@ -256,22 +221,7 @@ const services = [
     imageLeft: false,
     category: 'Desarrollo con IA',
   },
-  {
-    id: 'automatizacion-procesos-ia',
-    title: 'Automatización de Procesos con IA (Hyperautomation)',
-    description:
-      'Creación de "agentes" o "robots" que realizan tareas repetitivas de back-office empresarial: procesamiento de facturas, organización de datos y redacción de informes.',
-    features: [
-      'Extracción y clasificación inteligente de datos',
-      'Agente de gestión de correo electrónico',
-      'Generación automática de reportes',
-    ],
-    icon: <Cpu className="w-7 h-7" />,
-    image: 'https://images.unsplash.com/photo-1518433278981-162f13bc7335?w=800&h=500&fit=crop',
-    imageLeft: true,
-    category: 'Desarrollo con IA',
-  },
-  {
+    {
     id: 'analisis-predictivo-ia',
     title: 'Análisis Predictivo y Simulación de Negocios',
     description:
@@ -293,10 +243,7 @@ const categories = [
     name: 'Profesional',
     icon: <BriefcaseArtLine className="w-10 h-10" />,
   },
-  {
-    name: 'Académico',
-    icon: <GraduationCapArtLine className="w-10 h-10" />,
-  },
+  
   {
     name: 'Digital',
     icon: <MonitorArtLine className="w-10 h-10" />,
@@ -304,6 +251,10 @@ const categories = [
   {
     name: 'Desarrollo con IA',
     icon: <SparklesArtLine className="w-10 h-10" />,
+  },
+{
+    name: 'Académico',
+    icon: <GraduationCapArtLine className="w-10 h-10" />,
   },
 ];
 
