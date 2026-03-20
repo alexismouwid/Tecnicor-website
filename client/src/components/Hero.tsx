@@ -40,36 +40,7 @@ export default function Hero({
       { scale: 0.5, autoAlpha: 0 },
       { scale: 0.8, autoAlpha: 1, duration: 1, ease: 'power3.inOut' }
     );
-
-    // 2. Timeline con scroll — igual al original
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-      },
-    });
-
-    tl.from('.hero-inner', {
-      scale: 0.8,
-      autoAlpha: 1,
-      duration: 0.01,
-    });
-
-    tl.fromTo(
-      '.hero-inner',
-      { scale: 0.8, autoAlpha: 0 },
-      { scale: 1, autoAlpha: 1, duration: 1 }
-    );
-
-    tl.to('.hero-inner', {
-      scale: 1.4,
-      autoAlpha: 0,
-      duration: 3,
-    });
+    
   }, []);
 
   return (
