@@ -25,7 +25,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-20 h-20  from-accent to-secondary rounded-lg flex items-center justify-center">
-            <img src="/logo.png" alt="logo" className="w-20 h-20 object-containa" />
+            <img src="/logo.png" alt="logo" className="w-20 h-20 object-contain" />
           </div>
           <span className="relative flex right-6 text-xl font-bold text-foreground hidden sm:inline">  <img src="/nombre.png" alt="nombre" className="w-30 h-40 flex object-contain" /></span>
         </div>
@@ -57,9 +57,9 @@ export default function Header() {
         </button>
 
         {/* Botón de contacto desktop */}
-        <button className="hidden md:block px-6 py-2 bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300">
+        <a href="#contacto" className="hidden md:block px-6 py-2 bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300">
           Contactar
-        </button>
+        </a>
 
         {/* Botón de menú móvil */}
         <button
@@ -99,9 +99,9 @@ export default function Header() {
                   <><Moon className="w-4 h-4" /> Oscuro</>
                 )}
               </button>
-              <button className="flex-1 px-6 py-2 bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300">
+              <a href="#contacto" onClick={() => setIsMenuOpen(false)} className="flex-1 px-6 py-2 bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 text-center">
                 Contactar
-              </button>
+              </a>
             </div>
           </div>
         </div>

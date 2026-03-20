@@ -135,12 +135,18 @@ export default function CTA() {
 
         {/* Botón principal */}
         <div className="flex justify-center">
-          <Button
-            size="lg"
-            className="cta-button bg-gradient-to-r from-accent to-secondary hover:opacity-90 text-primary-foreground font-bold px-10 py-7 text-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30"
+          <a
+            href="https://wa.me/573136431944"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Iniciar Conversación
-          </Button>
+            <Button
+              size="lg"
+              className="cta-button bg-gradient-to-r from-accent to-secondary hover:opacity-90 text-primary-foreground font-bold px-10 py-7 text-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30"
+            >
+              Iniciar Conversación
+            </Button>
+          </a>
         </div>
       </div>
 

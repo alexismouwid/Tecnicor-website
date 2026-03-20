@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <div className="w-30 h-30 from-accent to-secondary rounded-lg flex items-center justify-center">
 
-            <img src="/logo.png" alt="logo" className="w-25 h-25 object-containa" />
+            <img src="/logo.png" alt="logo" className="w-25 h-25 object-contain" />
               </div>
               <span className="relative flex right-10 top-0 text-lg font-bold text-foreground">
  <img src="/nombre.png" alt="nombre" className="w-40 h-40 flex object-contain" />
