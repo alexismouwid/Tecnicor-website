@@ -81,7 +81,7 @@ export default function Hero({
       </div>
 
       {/* Contenido — hero-inner recibe la animación del original */}
-      <div className="hero-inner relative z-10 w-full mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-20 pb-16 sm:pb-24 lg:pb-20">
+      <div className="hero-inner max-sm:bottom-30 relative z-10 w-full mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-20 pb-16 sm:pb-24 lg:pb-20">
         <div
           className={`flex flex-col gap-0 max-w-3xl ${
             isCenter ? 'items-center text-center mx-auto' : 'items-start text-left'
