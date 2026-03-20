@@ -97,20 +97,24 @@ export default function Hero() {
 
         {/* Botones de acción */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button
-            size="lg"
-            className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold px-8 py-6 text-base"
-          >
-            Contáctanos Ahora
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-border hover:bg-card px-8 py-6 text-base font-semibold"
-          >
-            Ver Servicios
-          </Button>
+          <a href="#contacto">
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold px-8 py-6 text-base"
+            >
+              Contáctanos Ahora
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
+          <a href="#servicios">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-border hover:bg-card px-8 py-6 text-base font-semibold"
+            >
+              Ver Servicios
+            </Button>
+          </a>
         </div>
 
         {/* Estadísticas o características rápidas */}

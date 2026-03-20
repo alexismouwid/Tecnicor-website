@@ -410,7 +410,7 @@ function ServiceSection({ service }) {
 
 export default function Services() {
   const headerRef = useRef(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('Profesional');
 
   useGSAP(() => {
     gsap.fromTo(
@@ -429,9 +429,7 @@ export default function Services() {
     );
   }, []);
 
-  const filteredServices = selectedCategory
-    ? services.filter((service) => service.category === selectedCategory)
-    : [];
+  const filteredServices = services.filter((service) => service.category === selectedCategory);
 
   return (
     <div className="bg-background">
